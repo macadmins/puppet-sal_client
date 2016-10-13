@@ -7,7 +7,10 @@ class sal_client (
   $payload_organization = 'Sal Opensource',
 ){
   if $facts['os']['name'] == 'Darwin' {
-    class {'sal_client::install': } ->
+    include xcode_tools
+    class {'sal_client::install':
+      require => Class['xcode_tools'],
+    } ->
     class {'sal_client::config': } ->
     Class['sal_client']
   }
