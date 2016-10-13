@@ -1,7 +1,7 @@
 class sal_client (
   $server,
   $key,
-  $version = '17f26f3876d60ac8f8884e7b39851c3ebd425f42',
+  $version = 'e85b921d684b921db073541bb8fa1891c5e7418c',
   $skip_facts = [],
   $sync_scripts = true,
   $payload_organization = 'Sal Opensource',
