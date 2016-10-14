@@ -3,6 +3,7 @@ class sal_client::config {
   $key    = $sal_client::key
   $skip_facts = $sal_client::skip_facts
   $sync_scripts = $sal_client::sync_scripts
+  $basic_auth = $sal_client::basic_auth
   $payload_organization = $sal_client::payload_organization
 
   $profile = {
@@ -17,6 +18,7 @@ class sal_client::config {
                   'ServerURL' => $server,
                   'SyncScripts' => $sync_scripts,
                   'SkipFacts' => $skip_facts,
+                  'BasicAuth' => $basic_auth,
                 }
               }
             ]

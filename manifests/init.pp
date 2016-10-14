@@ -4,6 +4,7 @@ class sal_client (
   $version = 'e5183f79e9642166861149b2af7be6a7c45278e5',
   $skip_facts = [],
   $sync_scripts = true,
+  $basic_auth = true,
   $payload_organization = 'Sal Opensource',
 ){
   if $facts['os']['name'] == 'Darwin' {

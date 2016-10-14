@@ -16,6 +16,8 @@ sal_client::skip_facts:
     - 'some_other_fact'
 # Whether the client will sync the client side scripts directly from the server or if they will be deployed manually
 sal_client::sync_scripts: true
+# Use basic auth (please don't turn this off!)
+sal_client::basic_auth: true
 # Organisation name displayed in the profile. Cosmetic.
 sal_client::payload_organization: 'Sal Opensource'
 ```
