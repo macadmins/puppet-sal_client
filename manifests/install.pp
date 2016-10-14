@@ -58,6 +58,7 @@ class sal_client::install {
       owner   => 0,
       group   => 0,
       require => Vcsrepo[$install_dir],
+      ignore  => '*.pyc',
     }
   }
 
