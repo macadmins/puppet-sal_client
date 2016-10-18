@@ -55,6 +55,7 @@ class sal_client::install {
       mode    => $mode,
       recurse => $recurse,
       purge   => $recurse,
+      force   => $recurse,
       owner   => 0,
       group   => 0,
       require => Vcsrepo[$install_dir],
