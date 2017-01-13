@@ -1,7 +1,7 @@
 class sal_client (
   $server,
   $key,
-  $version = 'e5183f79e9642166861149b2af7be6a7c45278e5',
+  $version = 'be344955be812825fbca1d75b68252efd7bdfec5',
   $skip_facts = [],
   $sync_scripts = true,
   $basic_auth = true,
