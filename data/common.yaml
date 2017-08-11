@@ -1,0 +1,9 @@
+# sal_client/data/common.yaml
+
+sal_client::source: "puppet:///modules/bigfiles/sal/%{facts.os.family}"
+sal_client::version: '5f7193e22831d83c4bb0be0e52b3960019f8a7ee'
+sal_client::skip_facts: []
+sal_client::sync_scripts: true
+sal_client::basic_auth: true
+sal_client::payload_organization: 'Sal Opensource'
+sal_client::gosal_version: 'Gosal-0.0.1.exe'
