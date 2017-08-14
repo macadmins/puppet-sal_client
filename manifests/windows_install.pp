@@ -24,15 +24,19 @@ class sal_client::windows_install {
       content => template('sal_client/gosal_win.json.erb')
    }
 
-   scheduled_task { 'Run Gosal every half hour':
+   scheduled_task { 'gosal':
      ensure    => present,
      enabled   => true,
      command   => "${install_dir}/Gosal.exe",
      trigger   => {
-       schedule   => daily,
-       every      => 1,
+       enabled    => 'true',
+       index      => '0',
+       schedule   => 'once',
        start_time => '00:00',
+       start_date => '2017-8-14',
+       minutes_duration => '4294967295',
        minutes_interval => '30',
+       user => 'system'
      }
    }
  }
