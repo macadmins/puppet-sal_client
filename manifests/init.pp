@@ -14,13 +14,13 @@ class sal_client (
       include xcode_tools
       class {'sal_client::install':
         require => Class['xcode_tools'],
-      } ->
-      class {'sal_client::config': } ->
-      Class['sal_client']
       }
+      -> class {'sal_client::config': }
+      -> Class['sal_client']
+    }
     'Windows': {
-      class {'sal_client::windows_install': } ->
-      Class['sal_client']
+      class {'sal_client::windows_install': }
+      -> Class['sal_client']
     }
   }
 }
