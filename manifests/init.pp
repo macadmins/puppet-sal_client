@@ -1,9 +1,11 @@
 class sal_client (
   $server,
   $key,
+  $install_type,
   $source,
   $version,
   $gosal_version,
+  $macos_version,
   $skip_facts,
   $sync_scripts,
   $basic_auth,
@@ -13,7 +15,7 @@ class sal_client (
     'Darwin': {
       include xcode_tools
       class {'sal_client::install':
-        require => Class['xcode_tools'],
+        require => Class['xcode_tools']
       }
       -> class {'sal_client::config': }
       -> Class['sal_client']
