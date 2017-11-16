@@ -13,10 +13,7 @@ class sal_client (
 ){
   case $facts['os']['name'] {
     'Darwin': {
-      include xcode_tools
-      class {'sal_client::install':
-        require => Class['xcode_tools']
-      }
+      class {'sal_client::install': }
       -> class {'sal_client::config': }
       -> Class['sal_client']
     }

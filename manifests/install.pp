@@ -15,7 +15,8 @@ class sal_client::install {
 
 
   if $install_type == 'git' {
-      $directories.each | String $directory | {
+    include xcode_tools
+    $directories.each | String $directory | {
       if !defined(File[$directory]){
         file { $directory:
           ensure  => directory,
