@@ -1,9 +1,7 @@
 class sal_client (
   $server,
   $key,
-  $install_type,
   $source,
-  $version,
   $gosal_version,
   $macos_version,
   $skip_facts,
