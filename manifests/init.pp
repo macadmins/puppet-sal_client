@@ -15,7 +15,7 @@ class sal_client (
     'Darwin': {
       class {'sal_client::install': }
       -> class {'sal_client::config': }
-      -> class {'sal_client::service'}
+      -> class {'sal_client::service': }
       -> Class['sal_client']
     }
     'Windows': {
