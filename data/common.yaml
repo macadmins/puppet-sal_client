@@ -6,4 +6,4 @@ sal_client::sync_scripts: true
 sal_client::basic_auth: true
 sal_client::payload_organization: 'Sal Opensource'
 sal_client::gosal_version: 'Gosal-0.0.1.exe'
-sal_client::macos_version: '2.1.1'
+sal_client::macos_version: '2.1.2'
