@@ -1,6 +1,5 @@
 class sal_client (
-  $server,
-  $key,
+  $gosal_config = undef,
   $source,
   $gosal_version,
   $macos_version,

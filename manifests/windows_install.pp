@@ -1,6 +1,9 @@
 class sal_client::windows_install {
-  $server = $sal_client::server
-  $key    = $sal_client::key
+  if $sal_client::gosal_config {
+    $gosal_config = lookup('sal_client::gosal_config')
+  } else {
+    $gosal_config = {}
+  }
   $source = $sal_client::source
   $gosal  = $sal_client::gosal_version
 
@@ -21,7 +24,7 @@ class sal_client::windows_install {
 
     file { "${install_dir}/config.json":
       ensure  => file,
-      content => template('sal_client/gosal_win.json.erb')
+      content => sorted_json($gosal_config, true, 2)
     }
 
     scheduled_task { 'sal':
