@@ -9,8 +9,6 @@ sal_client::gosal_version: 'Gosal-0.0.1.exe'
 sal_client::macos_version: '2.1.3'
 # example gosal config - management key is optional
 # sal_client::gosal_config:
-#   key: A-LONG-KEY-YOU-NEED-TO-PUT-IN
-#   url: http://localhost:8080/
 #   management:
 #     tool: puppet
 #     path: C:\Program Files\Puppet Labs\Puppet\bin\puppet.bat
