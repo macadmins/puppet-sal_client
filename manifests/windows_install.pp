@@ -32,5 +32,13 @@ class sal_client::windows_install {
       ensure  => file,
       content => sorted_json($merged, true, 2)
     }
+
+    scheduled_task { 'sal':
+      ensure  => present,
+      command => "${install_dir}/Gosal.exe",
+      enabled => true,
+      trigger => [{'minutes_duration' => '25000000', 'minutes_interval' => '30', 'schedule' => 'once', 'start_date' => '1999-9-9', 'start_time' => '04:00'}],
+      user    => 'system',
+    }
   }
 }
