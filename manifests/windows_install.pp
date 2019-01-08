@@ -4,7 +4,7 @@ class sal_client::windows_install {
   $source = $sal_client::source
   $gosal  = $sal_client::gosal_version
 
-  $hash = Hash(['key',$key,'server',$server])
+  $hash = Hash(['key',$key,'url',$server])
 
   if $sal_client::gosal_config {
     $gosal_config = lookup('sal_client::gosal_config')
