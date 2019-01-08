@@ -1,4 +1,5 @@
 class sal_client (
+  $gosal_config = undef,
   $server,
   $key,
   $source,
