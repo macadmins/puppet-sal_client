@@ -4,7 +4,13 @@ class sal_client::install {
   $macos_checksum = $sal_client::macos_checksum
   $macos_receipt = $sal_client::macos_receipt
 
-  $package_source = "${source}/sal_scripts-${macos_version}.pkg"
+  if 'puppet:///' in source {
+    $package_source = "${source}/sal_scripts-${macos_version}.pkg"
+  }
+  else {
+    $package_source = $source
+  }
+
 
     if versioncmp($macos_version, '2.1.0') == -1 {
       $installs = [
