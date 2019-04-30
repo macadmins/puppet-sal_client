@@ -1,8 +1,8 @@
 class sal_client::install {
   $source = $sal_client::source
   $macos_version = $sal_client::macos_version
-  $checksum = $sal_client::macos_checksum
-  $receipt = $sal_client::macos_receipt
+  $macos_checksum = $sal_client::macos_checksum
+  $macos_receipt = $sal_client::macos_receipt
 
   $package_source = "${source}/sal_scripts-${macos_version}.pkg"
 
