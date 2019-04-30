@@ -21,6 +21,19 @@ sal_client::basic_auth: true
 # Organisation name displayed in the profile. Cosmetic.
 sal_client::payload_organization: 'Sal Opensource'
 ```
+### Optional Usage (Windows)
+
+if you're installing the windows client for sal (gosal) you'll need to create a yaml representation of gosal's config file in hiera.  Here, the `management` key is optional if you want to send facter data to sal.
+
+```yaml
+sal_client::gosal_config:
+  key: A-LONG-KEY-YOU-NEED-TO-PUT-IN
+  url: https://sal.company.com/
+  management:
+    tool: puppet
+    path: C:\Program Files\Puppet Labs\Puppet\bin\puppet.bat
+    command: facts
+```
 
 
 ## Requirements

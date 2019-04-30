@@ -11,3 +11,10 @@ sal_client::macos_checksum: ''
 sal_client::macos_receipt: 'com.github.salopensource.sal_scripts'
 sal_client::http_username: ''
 sal_client::http_password: ''
+
+# example gosal config - management key is optional
+# sal_client::gosal_config:
+#   management:
+#     tool: puppet
+#     path: C:\Program Files\Puppet Labs\Puppet\bin\puppet.bat
+#     command: facts
