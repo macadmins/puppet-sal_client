@@ -27,7 +27,7 @@ class sal_client::install {
     apple_package { 'sal_scripts':
       source        => $package_source,
       version       => $macos_version,
-      receipt       => $macos_receipt
+      receipt       => $macos_receipt,
       installs      => $installs,
       force_install => false,
       http_username => $http_username,
