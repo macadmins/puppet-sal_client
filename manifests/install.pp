@@ -36,8 +36,8 @@ class sal_client::install {
       receipt       => $macos_receipt,
       installs      => $installs,
       force_install => false,
-      http_username => $http_username,
-      http_password => $http_password,
+      http_username => $sal_client::http_username,
+      http_password => $sal_client::http_password,
       http_checksum => $macos_checksum
     }
 
