@@ -7,3 +7,7 @@ sal_client::basic_auth: true
 sal_client::payload_organization: 'Sal Opensource'
 sal_client::gosal_version: 'Gosal-0.0.1.exe'
 sal_client::macos_version: '2.1.3'
+sal_client::macos_checksum: ''
+sal_client::macos_receipt: 'com.github.salopensource.sal_scripts'
+sal_client::http_username: ''
+sal_client::http_password: ''

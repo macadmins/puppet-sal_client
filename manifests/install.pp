@@ -1,6 +1,8 @@
 class sal_client::install {
   $source = $sal_client::source
   $macos_version = $sal_client::macos_version
+  $checksum = $sal_client::macos_checksum
+  $receipt = $sal_client::macos_receipt
 
   $package_source = "${source}/sal_scripts-${macos_version}.pkg"
 
@@ -25,9 +27,12 @@ class sal_client::install {
     apple_package { 'sal_scripts':
       source        => $package_source,
       version       => $macos_version,
-      receipt       => 'com.github.salopensource.sal_scripts',
+      receipt       => $macos_receipt
       installs      => $installs,
       force_install => false,
+      http_username => $http_username,
+      http_password => $http_password,
+      http_checksum => $macos_checksum
     }
 
 }

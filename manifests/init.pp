@@ -4,10 +4,14 @@ class sal_client (
   $source,
   $gosal_version,
   $macos_version,
+  $macos_checksum,
+  $macos_receipt,
   $skip_facts,
   $sync_scripts,
   $basic_auth,
   $payload_organization,
+  $http_username,
+  $http_password
 ){
   case $facts['os']['name'] {
     'Darwin': {
