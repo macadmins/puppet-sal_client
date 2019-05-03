@@ -4,7 +4,7 @@ class sal_client::install {
   $macos_checksum = $sal_client::macos_checksum
   $macos_receipt = $sal_client::macos_receipt
 
-  if 'puppet:///' in source {
+  if 'puppet:///modules/' in source {
     $package_source = "${source}/sal_scripts-${macos_version}.pkg"
   }
   else {
@@ -30,7 +30,14 @@ class sal_client::install {
         '/usr/local/munki/report_broken_client'
         ]
     }
-    apple_package { 'sal_scripts':
+
+    exec {'sal_scripts_remove_dir':
+      command => '/bin/rm -rf /opt/puppetlabs/puppet/cache/packages/sal_scripts.pkg',
+      onlyif  => 'test -d /opt/puppetlabs/puppet/cache/packages/sal_scripts.pkg',
+      path    => '/usr/bin:/usr/sbin:/bin',
+    }
+
+    -> apple_package { 'sal_scripts':
       source        => $package_source,
       version       => $macos_version,
       receipt       => $macos_receipt,
