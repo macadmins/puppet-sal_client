@@ -27,12 +27,10 @@ if you're installing the windows client for sal (gosal) you'll need to create a 
 
 ```yaml
 sal_client::gosal_config:
-  key: A-LONG-KEY-YOU-NEED-TO-PUT-IN
-  url: https://sal.company.com/
   management:
-    tool: puppet
-    path: C:\Program Files\Puppet Labs\Puppet\bin\puppet.bat
-    command: facts
+    tool: puppet # tells gosal which config management tool you're using
+    path: C:\Program Files\Puppet Labs\Puppet\bin\puppet.bat # tells gosal where the path to said tool is
+    command: facts # the command used as an argument to the path/tool
 ```
 
 
@@ -40,3 +38,4 @@ sal_client::gosal_config:
 * [stdlib](https://github.com/puppetlabs/puppetlabs-stdlib)
 * [mac_stdlib](https://github.com/macadmins/puppet-mac_stdlib)
 * [mac_profiles_handler](https://github.com/keeleysam/puppet-mac_profiles_handler)
+* [win_scheduled_task](https://github.com/bdemetris/puppet-win_scheduled_task) - windows only
