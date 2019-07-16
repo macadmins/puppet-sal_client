@@ -38,5 +38,5 @@ sal_client::gosal_config:
 
 ## Requirements
 * [stdlib](https://github.com/puppetlabs/puppetlabs-stdlib)
-* [mac_stdlib](https://github.com/macadmins/puppet-mac_stdlib)
+* [client_stdlib](https://github.com/macadmins/puppet-client_stdlib)
 * [mac_profiles_handler](https://github.com/keeleysam/puppet-mac_profiles_handler)
