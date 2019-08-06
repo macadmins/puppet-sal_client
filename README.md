@@ -1,4 +1,5 @@
 # puppet-sal_client
+
 Configuration of a Sal client using Puppet.
 
 ## Usage
@@ -21,6 +22,7 @@ sal_client::basic_auth: true
 # Organisation name displayed in the profile. Cosmetic.
 sal_client::payload_organization: 'Sal Opensource'
 ```
+
 ### Optional Usage (Windows)
 
 if you're installing the windows client for sal (gosal) you'll need to create a yaml representation of gosal's config file in hiera.  Here, the `management` key is optional if you want to send facter data to sal.
@@ -33,9 +35,22 @@ sal_client::gosal_config:
     command: facts # the command used as an argument to the path/tool
 ```
 
+### Optional Usage (Debian)
+
+if you're installing the debian client for sal (gosal) you'll need to create a yaml representation of gosal's config file in hiera.  Here, the `management` key is optional if you want to send facter data to sal.
+
+```yaml
+sal_client::gosal_config:
+  management:
+    tool: puppet # tells gosal which config management tool you're using
+    path: /opt/puppetlabs/bin/puppet # tells gosal where the path to said tool is
+    command: facts # the command used as an argument to the path/tool
+```
 
 ## Requirements
+
 * [stdlib](https://github.com/puppetlabs/puppetlabs-stdlib)
 * [client_stdlib](https://github.com/macadmins/puppet-client_stdlib)
 * [mac_profiles_handler](https://github.com/keeleysam/puppet-mac_profiles_handler)
 * [win_scheduled_task](https://github.com/bdemetris/puppet-win_scheduled_task) - windows only
+
