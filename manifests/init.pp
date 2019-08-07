@@ -14,7 +14,7 @@ class sal_client (
   $http_username,
   $http_password
 ){
-  case $facts['os']['name'] {
+  case $facts['os']['family'] {
     'Darwin': {
       class {'sal_client::install': }
       -> class {'sal_client::config': }
@@ -23,6 +23,10 @@ class sal_client (
     }
     'Windows': {
       class {'sal_client::windows_install': }
+      -> Class['sal_client']
+    }
+    'Debian': {
+      class {'sal_client::debian_install': }
       -> Class['sal_client']
     }
   }
