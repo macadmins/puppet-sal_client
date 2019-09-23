@@ -30,7 +30,7 @@ class sal_client::windows_install {
 
     file { "${install_dir}/config.json":
       ensure  => file,
-      content => sorted_json($merged, true, 2)
+      content => to_json_pretty($merged)
     }
 
     win_scheduled_task::manage { 'SalCheckin':

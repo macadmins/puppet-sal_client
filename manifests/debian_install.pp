@@ -20,16 +20,16 @@ class sal_client::debian_install {
   }
 
   file { "${install_dir}/gosal":
-    ensure  => 'file',
-    mode    => '0750',
-    owner   => 'root',
-    group   => 'root',
+    ensure => 'file',
+    mode   => '0750',
+    owner  => 'root',
+    group  => 'root',
     source => "${source}/${gosal}"
   }
 
   file { "${install_dir}/config.json":
     ensure  => file,
-    content => sorted_json($merged, true, 2)
+    content => to_json_pretty($merged)
   }
 
   cron { 'SalCheckin':
