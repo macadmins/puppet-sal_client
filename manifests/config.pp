@@ -5,6 +5,7 @@ class sal_client::config {
   $sync_scripts = $sal_client::sync_scripts
   $basic_auth = $sal_client::basic_auth
   $payload_organization = $sal_client::payload_organization
+  $report_puppet_state = $sal_client::report_puppet_state
 
   $profile = {
     'PayloadContent' => [
@@ -19,6 +20,7 @@ class sal_client::config {
                   'SyncScripts' => $sync_scripts,
                   'SkipFacts' => $skip_facts,
                   'BasicAuth' => $basic_auth,
+                  'ReportPuppetState' => $report_puppet_state,
                 }
               }
             ]
