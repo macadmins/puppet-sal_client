@@ -4,7 +4,7 @@ class sal_client::install {
   $macos_checksum = $sal_client::macos_checksum
   $macos_receipt = $sal_client::macos_receipt
 
-  if 'puppet:///modules/' in source {
+  if 'puppet:///modules/' in $source {
     $package_source = "${source}/sal_scripts-${macos_version}.pkg"
   }
   else {
@@ -15,19 +15,18 @@ class sal_client::install {
     if versioncmp($macos_version, '2.1.0') == -1 {
       $installs = [
         '/usr/local/munki/preflight.d',
+        '/usr/local/munki/postflight.d',
         '/usr/local/sal/utils.py',
-        '/usr/local/munki/preflight.d'
         ]
     } else {
       $installs = [
         '/usr/local/munki/preflight.d',
-        '/usr/local/sal/utils.py',
-        '/usr/local/munki/preflight.d',
+        '/usr/local/munki/postflight.d',
         '/usr/local/sal/bin',
         '/usr/local/sal/bin/sal-submit',
         '/Library/LaunchDaemons/com.salopensource.sal.runner.plist',
         '/Library/LaunchDaemons/com.salopensource.sal.random.runner.plist',
-        '/usr/local/munki/report_broken_client'
+        '/usr/local/munki/report_broken_client',
         ]
     }
 

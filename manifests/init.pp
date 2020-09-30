@@ -12,7 +12,8 @@ class sal_client (
   $basic_auth,
   $payload_organization,
   $http_username,
-  $http_password
+  $http_password,
+  $report_puppet_state,
 ){
   case $facts['os']['family'] {
     'Darwin': {
