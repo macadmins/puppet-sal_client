@@ -27,7 +27,7 @@ sal_client::report_puppet_state: false
 
 ### Optional Usage (Windows)
 
-if you're installing the windows client for sal (gosal) you'll need to create a yaml representation of gosal's config file in hiera. Here, the `management` key is optional if you want to send facter data to sal.
+If you're installing the windows client for sal (gosal) you'll need to create a yaml representation of gosal's config file in Hiera. Here, the `management` key is optional if you want to send Facter data to sal.
 
 ```yaml
 sal_client::gosal_config:
@@ -46,7 +46,7 @@ sal_client::gosal_config:
 
 ### Optional Usage (Debian)
 
-if you're installing the debian client for sal (gosal) you'll need to create a yaml representation of gosal's config file in hiera. Here, the `management` key is optional if you want to send facter data to sal.
+If you're installing the Debian client for Sal (gosal) you'll need to create a yaml representation of gosal's config file in Hiera. Here, the `management` key is optional if you want to send Facter data to Sal.
 
 ```yaml
 sal_client::gosal_config:
