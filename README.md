@@ -23,6 +23,8 @@ sal_client::basic_auth: true
 sal_client::payload_organization: "Sal Opensource"
 # Control whether to submit Puppet state when using puppet_checkin_module
 sal_client::report_puppet_state: false
+# Control whether to define the plist content as binary, Optional default True, can cause older versions of puppet to crash if set to False.
+sal_client::use_binary_plist: true
 ```
 
 ### Optional Usage (Windows)

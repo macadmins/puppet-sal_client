@@ -6,6 +6,7 @@ class sal_client::config {
   $basic_auth = $sal_client::basic_auth
   $payload_organization = $sal_client::payload_organization
   $report_puppet_state = $sal_client::report_puppet_state
+  $use_binary_plist = $sal_client::use_binary_plist
 
   $profile = {
     'PayloadContent' => [
@@ -44,9 +45,19 @@ class sal_client::config {
     'PayloadVersion' => 1
   }
 
-  mac_profiles_handler::manage { 'com.github.salopensource.sal':
-    ensure      => present,
-    file_source => plist($profile),
-    type        => 'template',
+  # We use binary by default to prevent the content of the plist being logged, as
+  # older verisons of puppet can crash with content large bodies being passed to the logs.    
+  if $use_binary_plist  {
+    mac_profiles_handler::manage { 'com.github.salopensource.sal':
+      ensure      => present,
+      file_source => plist($profile, binary),
+      type        => 'template',
+    }
+  } else  {
+    mac_profiles_handler::manage { 'com.github.salopensource.sal':
+      ensure      => present,
+      file_source => plist($profile),
+      type        => 'template',
+    }
   }
 }

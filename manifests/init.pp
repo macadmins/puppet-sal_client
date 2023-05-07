@@ -14,6 +14,7 @@ class sal_client (
   $http_username,
   $http_password,
   $report_puppet_state,
+  $use_binary_plist = true
 ){
   case $facts['os']['family'] {
     'Darwin': {

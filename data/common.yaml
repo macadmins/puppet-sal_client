@@ -12,6 +12,7 @@ sal_client::macos_receipt: "com.github.salopensource.sal_scripts"
 sal_client::http_username: ""
 sal_client::http_password: ""
 sal_client::report_puppet_state: true
+sal_clinet::use_binary_plist: true
 # example gosal config - management key is optional
 # sal_client::gosal_config:
 #   management:
