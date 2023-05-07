@@ -46,7 +46,7 @@ class sal_client::config {
 
   mac_profiles_handler::manage { 'com.github.salopensource.sal':
     ensure      => present,
-    file_source => plist($profile, binary),
+    file_source => plist($profile),
     type        => 'template',
   }
 }
