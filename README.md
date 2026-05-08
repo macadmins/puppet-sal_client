@@ -62,3 +62,7 @@ sal_client::gosal_config:
 - [client_stdlib](https://github.com/macadmins/puppet-client_stdlib)
 - [mac_profiles_handler](https://github.com/keeleysam/puppet-mac_profiles_handler)
 - [win_scheduled_task](https://github.com/bdemetris/puppet-win_scheduled_task) - windows only
+
+## macOS Version Compatibility
+
+Tested and compatible with macOS 26 (Tahoe).
